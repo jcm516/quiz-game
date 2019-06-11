@@ -1,0 +1,24 @@
+<h2> You have {{ passFail ? "PASSED" : "FAILED"}} with a {{ percent }}% !</h2>
+<h2> Time to complete: {{ finishTime }}</h2>
+<h2> There were {{ multipleChoice }} multiple-choice question(s) and {{ trueFalse }} true/false question(s). </h2>
+<div>
+  <h2> You got {{ totalRight }} correct out of {{ overall }}! </h2>
+  <div>
+    <h3> Questions you got right :D </h3>
+      <ul>
+        <li *ngFor="let q of correctQuestions">
+          {{ q.question }}
+        </li>
+      </ul>
+</div>
+<div>
+  <h2> You got {{ totalWrong }} wrong out of {{ overall }}! </h2>
+    <div>
+      <h3> Questions you got wrong :O </h3>
+      <ul>
+        <li *ngFor="let q of wrongQuestions">
+          {{ q.question }}
+        </li>
+      </ul>
+    </div>
+</div>

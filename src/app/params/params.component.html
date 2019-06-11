@@ -1,0 +1,13 @@
+<div class="container">
+  <label>Difficulty</label>
+  <select [(ngModel)]="selectedParams.difficulty">
+    <option *ngFor="let difficulty of loadedOptions.difficulties" [ngValue]="difficulty"> {{difficulty}}</option>
+  </select>
+</div>
+<div class="container">
+  <label>Category</label>
+  <select [(ngModel)]="selectedParams.category">
+    <option *ngFor="let category of loadedOptions.categories" [ngValue]="category.id"> {{category.name}}</option>
+  </select>
+</div>
+<button (click)="chosen()" class="btn fancy-button">Start the game!</button>

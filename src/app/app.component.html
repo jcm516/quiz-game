@@ -1,0 +1,12 @@
+<div class="col-lg-10 col-lg-offset-1 app-container">
+  <app-top-bar (preLoad) = "preGame($event)"></app-top-bar>
+  <div *ngIf="isParams" class="container">
+    <app-params [loadedOptions]="options" (chose) = "gameStart($event)"></app-params>
+  </div>
+  <div *ngIf="isClicked" class="container">
+    <app-quiz [params] = "params" (gameOver)="gameDone($event)"></app-quiz> 
+  </div>
+  <div *ngIf="isDone" class="container">
+    <app-statistics></app-statistics>
+  </div>
+</div>
