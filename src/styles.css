@@ -298,5 +298,24 @@ app-footer div, span, a {
   color: white;
 
   align-self: center;
-  
+
+}
+
+@media screen and (max-width: 500px) {
+  app-top-bar {
+
+    height: 90px;
+
+  }
+
+  app-footer {
+
+    font-size: 12px;
+  }
+
+  app-statistics {
+
+    overflow: scroll;
+
+  }
 }
