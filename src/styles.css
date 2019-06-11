@@ -230,7 +230,7 @@ label {
 
 
 
-app-top-bar {
+app-top-bar, app-footer {
 
   width: 100%;
 
@@ -291,4 +291,12 @@ app-quiz h2 {
 
   align-self: center;
 
+}
+
+app-footer div, span, a {
+
+  color: white;
+
+  align-self: center;
+  
 }

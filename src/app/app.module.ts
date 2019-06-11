@@ -12,6 +12,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { QuizService } from './quiz.service';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ParamsComponent } from './params/params.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports:  [ 
@@ -29,7 +30,8 @@ import { ParamsComponent } from './params/params.component';
     QuizComponent, 
     StatisticsComponent,
     TopBarComponent,
-    ParamsComponent
+    ParamsComponent,
+    FooterComponent
   ],
   bootstrap:  [ 
     AppComponent 
