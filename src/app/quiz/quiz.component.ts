@@ -18,7 +18,8 @@ export class QuizComponent implements OnInit {
   correctIndex: number;
   answerForm;
   interval;
-  remainingTime: number = 15;
+  timePerQuestions: number; 
+  remainingTime: number;
   subscription;
 
   constructor(
@@ -52,6 +53,8 @@ export class QuizComponent implements OnInit {
           return x;
         });
 
+        this.timePerQuestions = this.params.isLightning ? 3 : 15;
+        this.remainingTime = this.timePerQuestions;
         this.questions = decoded;
         this.quizService.questions = this.questions;
         this.currentQuestion = this.questions[this.currentIndex];
@@ -67,6 +70,7 @@ export class QuizComponent implements OnInit {
   }
 
   startTimer() {
+    this.remainingTime = this.timePerQuestions;
     this.interval = setInterval(() => {
 
       if (this.remainingTime > 0) {
@@ -81,7 +85,7 @@ export class QuizComponent implements OnInit {
 
   loadChoices(q: Question) {
     this.choices = q.incorrect_answers;
-    //console.log(q.correct_answer);
+    console.log(q.correct_answer);
     this.choices.push(q.correct_answer);
     this.shuffleChoices();
     this.correctIndex = this.choices.findIndex( x => x === q.correct_answer );
@@ -108,7 +112,7 @@ export class QuizComponent implements OnInit {
   }
 
   processTime() {
-    let answerTime = this.remainingTime > 0 ? 15 - this.remainingTime : 15;
+    let answerTime = this.remainingTime > 0 ? this.timePerQuestions - this.remainingTime : this.timePerQuestions;
     this.quizService.addToTime(answerTime);
     clearInterval(this.interval);
     this.remainingTime = 15;

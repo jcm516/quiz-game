@@ -75,7 +75,7 @@ export interface Question {
 export class QuizParams {
   category: number;
   difficulty: string;
-  type: string;
+  isLightning: boolean;
   gameStart: boolean;
 }
 

@@ -24,5 +24,6 @@ export class ParamsComponent implements OnInit {
   ngOnInit() {
     this.selectedParams.category = this.loadedOptions.categories[0].id;
     this.selectedParams.difficulty = this.loadedOptions.difficulties[0];
+    this.selectedParams.isLightning = false;
   }
 }
