@@ -1,5 +1,6 @@
-<div class="col-lg-10 col-lg-offset-1 app-container">
+<div class="app-container">
   <app-top-bar (preLoad) = "preGame($event)"></app-top-bar>
+  <span> DASHBOARD FUNCTIONALITY TBA....</span>
   <div *ngIf="isParams" class="container">
     <app-params [loadedOptions]="options" (chose) = "gameStart($event)"></app-params>
   </div>
