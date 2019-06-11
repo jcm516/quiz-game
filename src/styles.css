@@ -20,7 +20,7 @@
 
 body {
 
-  margin: 0;
+  margin: 25px;
 
 }
 
@@ -31,9 +31,11 @@ body {
 
   flex-direction: column;
 
-  justify-content: space-between;
-
   align-items: center;
+
+  border: 5px solid #1976d2;
+
+  height: 750px;
   
 }
 
@@ -45,6 +47,20 @@ body {
   flex-direction: column;
 
   padding: 10px;
+
+}
+
+.comp-container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 10px;
+
+  align-items: flex-start;
+
+  justify-content: center;
 
 }
 
@@ -72,7 +88,10 @@ h1 {
 h2 {
 
   padding: 10px;
+
   font-size: 20px;
+
+  margin: 0;
 
 }
 
@@ -98,31 +117,6 @@ p {
   font-size: 14px;
 
 }
-
-
-
-/* Hyperlink */
-
-
-
-a {
-
-  cursor: pointer;
-
-  color: #1976d2;
-
-  text-decoration: none;
-
-}
-
-
-
-a:hover {
-
-  opacity: 0.8;
-
-}
-
 
 
 /* Input */
@@ -169,11 +163,13 @@ label {
 
   align-items: center;
 
-  padding: 8px 16px;
+  padding: 8px 0px;
+
+  padding-right: 16px;
 
   border-radius: 2px;
 
-  font-size: 14px;
+  font-size: 16px;
 
   cursor: pointer;
 
@@ -291,9 +287,8 @@ app-quiz .button-bar {
 
 }
 
-app-quiz form {
+app-quiz h2 {
 
   align-self: center;
-
 
 }
