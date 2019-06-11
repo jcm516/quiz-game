@@ -13,6 +13,10 @@ export class AppComponent  {
   options: PreGame;
   params: QuizParams;
 
+  get showSignature() {
+    return !this.isParams && !this.isClicked && !this.isDone;
+  }
+
   preGame(e) {
     this.isClicked = false;
     this.isDone = false;
