@@ -1,10 +1,9 @@
-
-  <h2> {{ currentIndex + 1 }} / 10 </h2>
-  <h2> Time left: {{ remainingTime }}s </h2>
-  <h2>
-    {{   !currentQuestion ? "" : currentQuestion.question  }}
-  </h2>
-  
+<h2> {{ currentIndex + 1 }} / 10 </h2>
+<h2> Time left: {{ remainingTime }}s </h2>
+<h2>
+  {{   !currentQuestion ? "" : currentQuestion.question  }}
+</h2>
+<div class="answer-group">
   <form [formGroup]="answerForm" (ngSubmit)="processAnswer(answerForm.value)">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <label *ngFor="let choice of choices; let i = index" class="btn btn-secondary active">
@@ -16,3 +15,4 @@
       <button type="submit" class="button fancy-button"><i class="material-icons">navigate_next</i>Next</button>
     </div>
   </form>
+</div>
