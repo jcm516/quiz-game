@@ -1,4 +1,12 @@
 <div class="container">
+  <h2> RULES: </h2>
+  <ol>
+    <li>Please pick a difficulty & category</li>
+    <li>You only have 15 seconds per question</li>
+    <li>You can reset at any time by pressing top left button</li>
+  </ol>
+</div>
+<div class="container">
   <label>Difficulty</label>
   <select [(ngModel)]="selectedParams.difficulty">
     <option *ngFor="let difficulty of loadedOptions.difficulties" [ngValue]="difficulty"> {{difficulty}}</option>
