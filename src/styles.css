@@ -287,7 +287,7 @@ app-quiz .answer-group {
 }
 
 app-quiz form {
-  
+
   display: flex;
 
   flex-direction: row;
@@ -328,9 +328,27 @@ app-statistics ul {
 }
 
 @media screen and (max-width: 500px) {
+  body {
+
+    margin: 15px;
+
+  }
+
   app-top-bar {
 
-    height: 90px;
+    height: auto;
+
+  }
+
+  .comp-container {
+
+    width: 100%;
+
+  }
+
+  app-params {
+
+    width: 100%;
 
   }
 
