@@ -44,6 +44,7 @@ export class StatisticsComponent implements OnInit {
     let time = minutes.toString().padStart(2, '0') + " m : " + seconds.toString().padStart(2, '0') + " s";
     return time;
   }
+  
   //TODO: ADD IN USER FUNCTIONALITY TO MAKE SCORES MAKE SENSE
   calculateScore() {
     
