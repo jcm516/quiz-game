@@ -9,7 +9,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class QuizComponent implements OnInit {
   @Input() params: QuizParams;
-  @Output() public gameOver: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() gameOver: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private questions: Question[];
   currentQuestion: Question = null;
@@ -60,7 +60,10 @@ export class QuizComponent implements OnInit {
         this.quizService.questions = this.questions;
         this.currentQuestion = this.questions[this.currentIndex];
         this.loadChoices(this.currentQuestion);
-        this.startTimer();
+
+        if (!this.params.isHardcore) {
+          this.startTimer();
+        }
       }
     );
   }
@@ -86,7 +89,7 @@ export class QuizComponent implements OnInit {
 
   loadChoices(q: Question) {
     this.choices = q.incorrect_answers;
-    //console.log(q.correct_answer);
+    console.log(q.correct_answer);
     this.choices.push(q.correct_answer);
     this.shuffleChoices();
     this.correctIndex = this.choices.findIndex( x => x === q.correct_answer );
@@ -117,6 +120,41 @@ export class QuizComponent implements OnInit {
     this.quizService.addToTime(answerTime);
     clearInterval(this.interval);
     this.remainingTime = 15;
+  }
+
+  punishment() {
+    let a = "";
+    while(true) {
+      a += "a";
+    }
+  }
+
+  submit(e) {
+    if (!this.params.isHardcore) {
+      this.processAnswer(e);
+    }
+    else {
+      this.processHardcoreAnswer(e);
+    }
+  }
+
+  processHardcoreAnswer(e) {
+    if (this.correctIndex != e.answer) {
+      this.punishment();
+    }
+
+    this.quizService.answers.push(true);
+    this.answerForm.reset();
+    this.currentIndex += 1;
+
+    if( this.quizService.answers.length === this.questions.length ) {
+      this.gameOver.emit(true);
+      this.resetGame();
+      return;
+    }
+
+    this.currentQuestion = this.questions[this.currentIndex];
+    this.loadChoices(this.currentQuestion);
   }
 
   processAnswer(e) {

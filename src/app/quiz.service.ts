@@ -78,6 +78,7 @@ export class QuizParams {
   category: number;
   difficulty: string;
   isLightning: boolean;
+  isHardcore: boolean;
   gameStart: boolean;
 }
 

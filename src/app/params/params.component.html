@@ -3,9 +3,13 @@
   <ol>
     <li>Pick a difficulty & category</li>
     <li>You need a 70% or better to pass</li>
-    <li>In the regular quiz, you only have 15 seconds per question</li>
-    <li>For extra challenge, the lightning round is 3 seconds per question</li>
     <li>You can reset at any time by pressing the top left button</li>
+    <li>For the regular quiz, you only have 15 seconds per question</li>
+    <li>Extras</li>
+    <ul>
+      <li>For extra challenge, the lightning round is 3 seconds per question</li>
+      <li>For extra+ challenge, hardcore has no timer or reset but will punish if you get any question wrong</li>
+    </ul>
   </ol>
 </div>
 <div class="container">
@@ -23,6 +27,13 @@
 <div class="container">
   <label>Lightning Round? </label>
   <select [(ngModel)]="selectedParams.isLightning">
+    <option [ngValue]="true"> Yes </option>
+    <option [ngValue]="false"> No </option>
+  </select>
+</div>
+<div class="container">
+  <label>Hardcore? </label>
+  <select [(ngModel)]="selectedParams.isHardcore">
     <option [ngValue]="true"> Yes </option>
     <option [ngValue]="false"> No </option>
   </select>

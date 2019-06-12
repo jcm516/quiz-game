@@ -58,7 +58,7 @@ body {
 
   align-items: flex-start;
 
-  justify-content: center;
+  overflow: auto;
 
 }
 
@@ -318,6 +318,12 @@ app-quiz h2 {
 
 }
 
+app-footer {
+
+  height: auto;
+
+}
+
 app-footer div, span, a {
 
   color: white;
@@ -331,6 +337,7 @@ app-statistics ul {
   margin-right: 10px;
 
 }
+
 
 @media screen and (max-width: 500px) {
   body {
