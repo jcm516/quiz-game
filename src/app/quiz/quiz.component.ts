@@ -54,6 +54,7 @@ export class QuizComponent implements OnInit {
         });
 
         this.timePerQuestions = this.params.isLightning ? 3 : 15;
+        this.quizService.isLightning = this.params.isLightning;
         this.remainingTime = this.timePerQuestions;
         this.questions = decoded;
         this.quizService.questions = this.questions;

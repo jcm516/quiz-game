@@ -8,6 +8,7 @@ export class QuizService {
   public questions: Question[] = [];
   public difficulties: string[] = [ "Easy", "Medium", "Hard" ];
   timeToFinish: number = 0;
+  isLightning: boolean; 
 
   private getQuizQuestionsUrl(): string {
     return "https://opentdb.com/api.php";
@@ -25,6 +26,7 @@ export class QuizService {
     this.answers = [];
     this.questions = [];
     this.timeToFinish = 0;
+    this.isLightning = false;
   }
 
   addToTime(t: number) {
