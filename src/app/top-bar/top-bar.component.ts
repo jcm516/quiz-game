@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { QuizService, QuizCategory, PreGame } from '../quiz.service';
 
 @Component({
@@ -7,7 +7,8 @@ import { QuizService, QuizCategory, PreGame } from '../quiz.service';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
-  @Output() public preLoad: EventEmitter<PreGame> = new EventEmitter();
+  @Input() playAgain: boolean;
+  @Output() preLoad: EventEmitter<PreGame> = new EventEmitter();
 
   subscription;
   preLoaded: PreGame = new PreGame();
@@ -35,4 +36,7 @@ export class TopBarComponent implements OnInit {
     );
   }
 
+  get btnMessage() {
+    return (this.preLoaded && this.preLoaded.goToPreGame ? (this.playAgain ? "Play Again?" : "Reset") : "Start" );
+  }
 }
