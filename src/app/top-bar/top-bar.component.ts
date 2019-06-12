@@ -37,6 +37,8 @@ export class TopBarComponent implements OnInit {
   }
 
   get btnMessage() {
-    return (this.preLoaded && this.preLoaded.goToPreGame ? (this.playAgain ? "Play Again?" : "Reset") : "Start" );
+    return ( this.preLoaded && this.preLoaded.goToPreGame ? 
+      (this.playAgain ? "Play Again?" : "Reset") 
+      : "Start" );
   }
 }
