@@ -17,6 +17,14 @@ export class AppComponent  {
     return !this.isParams && !this.isClicked && !this.isDone;
   }
 
+  reset(e) {
+    if (e){
+      this.isParams = false;
+      this.isClicked = false;
+      this.isDone = false;
+    } 
+  }
+
   preGame(e) {
     this.isClicked = false;
     this.isDone = false;

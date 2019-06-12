@@ -1,5 +1,5 @@
 <div class="app-container">
-  <app-top-bar [playAgain] = "isDone" (preLoad) = "preGame($event)"></app-top-bar>
+  <app-top-bar [playAgain] = "isDone" (preLoad) = "preGame($event)" (landing) = "reset($event)"></app-top-bar>
   <div *ngIf="showSignature" class="img-comp-container">
     <img alt="Justin's Quiz" class="img-container" src="https://github.com/jcm516/quiz-game/blob/master/src/app/Drawing%20(2).png?raw=true" />
     <p style="align-self: center"> Thank you so much for looking at this 'game'! xD - Justin </p>
@@ -13,7 +13,7 @@
   <div *ngIf="isDone" class="comp-container">
     <app-statistics></app-statistics>
   </div>
-  <div class="comp-container">
+  <div *ngIf="showSignature" class="comp-container">
     <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />
     <span style="color: black; text-align: center;"> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" style="color: black">Creative Commons Attribution-NonCommercial 4.0 International License</a></span>
   </div>

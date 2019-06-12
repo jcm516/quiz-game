@@ -62,6 +62,8 @@ body {
 
   overflow: auto;
 
+  padding: 20px;
+
 }
 
 
@@ -211,6 +213,8 @@ label {
   background-color: white;
 
   color: #1976d2;
+
+  font-weight: bold;
 
 }
 

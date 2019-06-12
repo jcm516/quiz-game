@@ -9,14 +9,21 @@ import { QuizService, QuizCategory, PreGame } from '../quiz.service';
 export class TopBarComponent implements OnInit {
   @Input() playAgain: boolean;
   @Output() preLoad: EventEmitter<PreGame> = new EventEmitter();
+  @Output() landing: EventEmitter<boolean> = new EventEmitter();
 
   subscription;
   preLoaded: PreGame = new PreGame();
+  toLanding: boolean = false;
 
   isClicked() {
     this.preLoaded.goToPreGame = true;
     this.preLoad.emit(this.preLoaded);
     this.subscription.complete();
+  }
+
+  backToLanding() {
+    this.preLoaded.goToPreGame = false;
+    this.landing.emit(true);
   }
 
   constructor(
@@ -35,10 +42,9 @@ export class TopBarComponent implements OnInit {
       }
     );
   }
-
+  
   get btnMessage() {
-    return ( this.preLoaded && this.preLoaded.goToPreGame ? 
-      (this.playAgain ? "Play Again?" : "Reset") 
-      : "Start" );
+    return this.preLoaded && this.preLoaded.goToPreGame ? 
+    (this.playAgain ? "Play Again?" : "Reset") : "Start" ;
   }
 }
