@@ -7,7 +7,7 @@
   <div *ngIf="isParams" class="comp-container">
     <app-params [loadedOptions]="options" (chose) = "gameStart($event)"></app-params>
   </div>
-  <div *ngIf="isClicked" class="comp-container">
+  <div *ngIf="isClicked" class="quiz-comp-container">
     <app-quiz [params] = "params" (gameOver)="gameDone($event)"></app-quiz> 
   </div>
   <div *ngIf="isDone" class="comp-container">
