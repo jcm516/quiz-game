@@ -25,15 +25,15 @@
   </select>
 </div>
 <div class="container">
-  <label>Lightning Round? </label>
-  <select [(ngModel)]="selectedParams.isLightning">
+  <label>Hardcore? </label>
+  <select [(ngModel)]="selectedParams.isHardcore">
     <option [ngValue]="true"> Yes </option>
     <option [ngValue]="false"> No </option>
   </select>
 </div>
-<div class="container">
-  <label>Hardcore? </label>
-  <select [(ngModel)]="selectedParams.isHardcore">
+<div *ngIf="!selectedParams.isHardcore" class="container">
+  <label>Lightning Round? </label>
+  <select [(ngModel)]="selectedParams.isLightning">
     <option [ngValue]="true"> Yes </option>
     <option [ngValue]="false"> No </option>
   </select>
