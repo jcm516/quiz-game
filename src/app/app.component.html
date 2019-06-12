@@ -1,8 +1,9 @@
 <div class="app-container">
   <app-top-bar (preLoad) = "preGame($event)"></app-top-bar>
-    <!--<div *ngIf="showSignature" class="img-comp-container">
-      <img alt="Justin's Quiz" class="img-container" src="https://github.com/jcm516/quiz-game/blob/master/src/app/quiz-landing-2.png?raw=true" />
-    </div> !-->
+    <div *ngIf="showSignature" class="img-comp-container">
+      <img alt="Justin's Quiz" class="img-container" src="https://github.com/jcm516/quiz-game/blob/master/src/app/Drawing%20(2).png?raw=true" />
+      <p> Thank you so much for looking at this 'game'! xD - Justin </p>
+    </div> 
   <div *ngIf="isParams" class="comp-container">
     <app-params [loadedOptions]="options" (chose) = "gameStart($event)"></app-params>
   </div>
