@@ -1,4 +1,7 @@
-<form [formGroup]="answerForm" (ngSubmit)="submit(answerForm.value)">
+<div *ngIf="errorResponse" class="error-container">
+  {{ errorMsg }}
+</div>
+<form *ngIf= "!errorResponse" [formGroup]="answerForm" (ngSubmit)="submit(answerForm.value)">
   <h2 *ngIf = "!params.isHardcore"> Time left: {{ remainingTime }}s </h2>
   <h2>
     {{   !currentQuestion ? "" : currentQuestion.question  }}

@@ -16,10 +16,12 @@ export class QuizComponent implements OnInit {
   choices: string[] = [];
   currentIndex: number = 0;
   correctIndex: number;
-  answerForm;
-  interval;
-  timePerQuestions: number; 
+  errorResponse: boolean = false;
+  errorMsg: string = "";
+  timePerQuestions: number;
   remainingTime: number;
+  answerForm;
+  interval; 
   subscription;
 
   constructor(
@@ -38,7 +40,12 @@ export class QuizComponent implements OnInit {
       10
     ).subscribe(
       ( data: QuestionResponse ) => {
-        if (!data || data.response_code != 0){
+        if (!data || data.response_code != 0) {
+          this.errorResponse = true;
+          this.errorMsg = data.response_code == 1 ?
+            "API doesn't have enough questions for your request. Sorry..." :
+            "Something went wrong... we'll look into it."; 
+          this.errorMsg += " Click the top left or right to return to a previous page."
           console.log(data.response_code,  ':' , data);
           return;
         }
@@ -113,6 +120,8 @@ export class QuizComponent implements OnInit {
     this.currentIndex = 0;
     this.correctIndex = 0;
     this.choices = [];
+    this.errorMsg = "";
+    this.errorResponse = false;
   }
 
   processTime() {
@@ -123,10 +132,13 @@ export class QuizComponent implements OnInit {
   }
 
   punishment() {
-    let a = "";
-    while(true) {
-      a += "a";
-    }
+    setInterval(() => { 
+      let a = "";
+      while(true) {
+        a += "yOu GoT OnE wROng.....hA";
+        console.log(a);
+      }
+    }, 4000);
   }
 
   submit(e) {
@@ -140,6 +152,8 @@ export class QuizComponent implements OnInit {
 
   processHardcoreAnswer(e) {
     if (this.correctIndex != e.answer) {
+      this.errorResponse = true;
+      this.errorMsg = "Press F12 for more information. Quickly there's no time!";
       this.punishment();
     }
 
