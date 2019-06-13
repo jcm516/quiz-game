@@ -135,7 +135,7 @@ export class QuizComponent implements OnInit {
     setInterval(() => { 
       let a = "";
       while(true) {
-        a += "yOu GoT OnE wROng.....hA";
+        a += "yOu GoT OnE wROng.....hA ";
         console.log(a);
       }
     }, 4000);

@@ -370,8 +370,6 @@ app-quiz h2 {
 
   align-self: center;
 
-  width: 80%;
-
 }
 
 app-footer {
@@ -413,6 +411,12 @@ app-statistics ul {
     width: 100%;
 
     overflow: auto;
+
+  }
+
+  app-quiz h2 {
+
+    width: 80%;
 
   }
 
