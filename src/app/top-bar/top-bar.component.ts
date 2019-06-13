@@ -37,7 +37,12 @@ export class TopBarComponent implements OnInit {
     let anyOption = <QuizCategory>{id: null, name: "Any"}; 
     this.subscription = this.quizService.getAllCategories().subscribe(
       cat => {
-        cat ? this.preLoaded.categories = cat.trivia_categories : this.preLoaded.categories = [];
+        cat ? this.preLoaded.categories = cat.trivia_categories.sort((a,b) => {
+          let A = a.name.toLowerCase(), B = b.name.toLowerCase();
+          return A < B ? -1 : (A > B ? 1 : 0);
+        }) 
+          : this.preLoaded.categories = [];
+        console.log(cat);
         this.preLoaded.categories.unshift(anyOption);
       }
     );
