@@ -140,11 +140,9 @@ export class QuizComponent implements OnInit {
   }
 
   punishment() {
+    console.log("FREEEEZE!");
     setInterval(() => { 
-      let a = "";
-      while(true) {
-        a = a += "yOu GoT OnE wROng.....hA ";
-      }
+      for(;;) {}
     }, 3000);
   }
 
