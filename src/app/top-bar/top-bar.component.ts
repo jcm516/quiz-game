@@ -42,7 +42,6 @@ export class TopBarComponent implements OnInit {
           return A < B ? -1 : (A > B ? 1 : 0);
         }) 
           : this.preLoaded.categories = [];
-        console.log(cat);
         this.preLoaded.categories.unshift(anyOption);
       }
     );

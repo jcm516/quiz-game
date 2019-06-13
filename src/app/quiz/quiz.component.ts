@@ -104,7 +104,7 @@ export class QuizComponent implements OnInit {
 
   loadChoices(q: Question) {
     this.choices = q.incorrect_answers;
-    console.log(q.correct_answer);
+    //console.log(q.correct_answer);
     this.choices.push(q.correct_answer);
     this.shuffleChoices();
     this.correctIndex = this.choices.findIndex( x => x === q.correct_answer );
