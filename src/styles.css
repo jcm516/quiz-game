@@ -275,9 +275,13 @@ label {
   
   border-width:0; 
   
-  width: 100%; 
-  
   height: auto;
+}
+
+.img-comp-container .img-container {
+  
+  width: 100%;
+
 }
 
 
@@ -392,8 +396,16 @@ app-statistics ul {
 
 }
 
+@media screen and (min-width: 550px) {
 
-@media screen and (max-width: 500px) {
+  .img-comp-container {
+    width: auto;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+
   body {
 
     margin: 15px;
@@ -435,14 +447,6 @@ app-statistics ul {
   app-statistics {
 
     overflow: scroll;
-
-  }
-
-  .img-comp-container .img-container {
-    
-    height: auto;
-
-    width: auto;
 
   }
 
