@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { QuizService, QuestionResponse, QuizCategory, Question, QuizParams } from '../quiz.service';
 import { FormBuilder } from '@angular/forms';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-quiz',
@@ -26,20 +27,27 @@ export class QuizComponent implements OnInit {
 
   constructor(
     protected quizService: QuizService,
-    protected formBuilder: FormBuilder
+    protected formBuilder: FormBuilder,
+    protected loadingService: LoadingService
     ) {
       this.answerForm = this.formBuilder.group({
         answer: ''
       });
   }
 
+  get isLoading() {
+    return this.loadingService.loading;
+  }
+
   ngOnInit() {
+    this.loadingService.onRequestStarted();
     this.subscription = this.quizService.getQuestions(
       this.params.difficulty ? this.params.difficulty : "Any",
       this.params.category ? this.params.category.toString() : "",
       10
     ).subscribe(
       ( data: QuestionResponse ) => {
+        this.loadingService.onRequestEnded();
         if (!data || data.response_code != 0) {
           this.errorResponse = true;
           this.errorMsg = data.response_code == 1 ?

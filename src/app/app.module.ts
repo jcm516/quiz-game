@@ -13,6 +13,7 @@ import { QuizService } from './quiz.service';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ParamsComponent } from './params/params.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoadingService } from './loading.service';
 
 @NgModule({
   imports:  [ 
@@ -37,7 +38,8 @@ import { FooterComponent } from './footer/footer.component';
     AppComponent 
   ],
   providers: [
-    QuizService
+    QuizService,
+    LoadingService
   ]
 })
 export class AppModule { }
