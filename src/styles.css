@@ -50,6 +50,8 @@ body {
 
   padding: 10px;
 
+  color: black;
+
 }
 
 .comp-container {
@@ -383,8 +385,6 @@ app-footer {
 }
 
 app-footer div, span, a {
-
-  color: white;
 
   align-self: center;
 

@@ -1,10 +1,12 @@
+import 'hammerjs';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -47,6 +49,37 @@ import { FooterComponent } from './footer/footer.component';
 import { LoadingService } from './loading.service';
 
 @NgModule({
+  imports: [    
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatSliderModule,
+    MatSnackBarModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatNativeDateModule
+  ],
   exports: [
     // Material
     MatAutocompleteModule,
@@ -77,7 +110,7 @@ import { LoadingService } from './loading.service';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatNativeDateModule,
+    MatNativeDateModule
   ]
 })
 export class MaterialModule {}
@@ -85,12 +118,10 @@ export class MaterialModule {}
 @NgModule({
   imports:  [ 
     BrowserModule, 
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,    
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,    
     BrowserAnimationsModule
   ],
   declarations: [ 

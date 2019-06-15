@@ -75,14 +75,14 @@ export interface Question {
 }
 
 export class QuizParams {
-  category: number;
+  category: QuizCategory;
   difficulty: string;
   isLightning: boolean;
   isHardcore: boolean;
   gameStart: boolean;
 }
 
-export interface QuizCategory {
+export class QuizCategory {
   id: number;
   name: string;
 }
